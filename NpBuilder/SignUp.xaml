@@ -1,0 +1,58 @@
+﻿<Window x:Class="NpBuilder.SignUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NpBuilder"
+        mc:Ignorable="d"
+               WindowStyle="None"
+        ResizeMode="NoResize"
+AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        
+        Title="SignUp" Height="510" Width="900" >
+    <Window.Background>
+        <ImageBrush ImageSource="Assets/SignUp.png" Stretch="Fill"/>
+    </Window.Background>
+
+    <Window.Resources>
+        <Style x:Key="WindowButton" TargetType="Button">
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10"/>
+
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+       
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" x:Name="employeeIdBox"  VerticalAlignment="Center" HorizontalAlignment="Center" Background="#FF1F1F1F" Width="330" >
+
+            <TextBlock Text="Employee Id" HorizontalAlignment="Left" Margin="66,100,0,0" FontWeight="DemiBold" FontSize="24" Foreground="DarkGray"  />
+            <TextBox x:Name="empId"  MaxLength="8" Margin="0,40,0,0"  FontWeight="DemiBold" FontSize="15" Foreground="DarkGray"  MaxWidth="200" MinWidth="200" Padding="5" HorizontalAlignment="Center" Background="#FF262626" BorderBrush="#FF383838"/>
+            <Button x:Name="signIn" Content="Sign In"  MaxWidth="200" MinWidth="200" Margin="0,20,0,100" HorizontalAlignment="Center" Padding="10,4,10,4" Background="#FF0075FF" Foreground="White" FontWeight="DemiBold" BorderBrush="Transparent" Click="signIn_Click"/>
+
+        </StackPanel>
+        <TextBlock Text="Developed by Prathmesh Bagmare @2025" Foreground="White" FontSize="16" Opacity="0.1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Margin="8,8,15,9"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" VerticalAlignment="Top">
+
+            <Button  Padding="15,10,15,10" Style="{StaticResource WindowButton}" Click="Button_Click">
+                <Image Source="Assets/xbutton.png" MaxHeight="13" MaxWidth="13"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
